@@ -8,6 +8,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpHeight = 6f;
     [SerializeField] Camera mainCamera;
 
+    [SerializeField] GameObject gameManager;
+    EnergyManager energyManage;
+
     bool facingRight = true;
     float moveDir = 0;
     bool isGrounded = false;
@@ -16,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        energyManage = gameManager.GetComponent<EnergyManager>();
         rb = GetComponent<Rigidbody2D>();
         rb.freezeRotation = true;
         rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
@@ -73,5 +77,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.layer == 7)
             isGrounded = true;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 8)
+            energyManage.ResetTimer();
     }
 }

@@ -28,14 +28,9 @@ public class EnergyManager : MonoBehaviour
     {
         energyBar.fillAmount = timer / maxEnergy;
     }
-    public void LoseEnergy()
+
+    public void ResetTimer()
     {
-
+        timer = maxEnergy;
     }
-
-    public void GainEnergy()
-    {
-
-    }
-
 }
