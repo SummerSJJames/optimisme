@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         //Movement controls
-        if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && (isGrounded || Mathf.Abs(rb.velocity.x) > 0.01f))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
             moveDir = Input.GetKey(KeyCode.A) ? -1 : 1;
 
         else if (isGrounded || rb.velocity.magnitude < 0.01f || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
