@@ -1,0 +1,77 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerMovement : MonoBehaviour
+{
+    [SerializeField] float maxSpeed = 3f;
+    [SerializeField] float jumpHeight = 6f;
+    [SerializeField] Camera mainCamera;
+
+    bool facingRight = true;
+    float moveDir = 0;
+    bool isGrounded = false;
+    Vector3 cameraPos;
+    Rigidbody2D rb;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        rb.freezeRotation = true;
+        rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+        facingRight = transform.localScale.x > 0;
+
+        if (mainCamera)
+            cameraPos = mainCamera.transform.position;
+    }
+
+    void Update()
+    {
+        //Movement controls
+        if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && (isGrounded || Mathf.Abs(rb.velocity.x) > 0.01f))
+            moveDir = Input.GetKey(KeyCode.A) ? -1 : 1;
+
+        else if (isGrounded || rb.velocity.magnitude < 0.01f || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
+            moveDir = 0;
+
+        //Change look direction
+        if (moveDir != 0)
+        {
+            if (moveDir > 0 && !facingRight)
+            {
+                facingRight = true;
+                //transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                GetComponent<SpriteRenderer>().flipX = true;
+            }
+            if (moveDir < 0 && facingRight)
+            {
+                facingRight = false;
+                //transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                GetComponent<SpriteRenderer>().flipX = false;
+            }
+        }
+
+        //Jumping
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
+            isGrounded = false;
+        }
+
+        //Camera follow
+        if (mainCamera)
+            mainCamera.transform.position = new Vector3(transform.position.x, cameraPos.y, cameraPos.z);
+    }
+
+    void FixedUpdate()
+    {       
+        //Moving
+        rb.velocity = new Vector2(moveDir * maxSpeed, rb.velocity.y);
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 7)
+            isGrounded = true;
+    }
+}
