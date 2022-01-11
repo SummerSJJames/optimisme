@@ -12,6 +12,8 @@ public class EnergyManager : MonoBehaviour
 
     [SerializeField]GameObject levelManager;
     LevelLoader levelLoader;
+
+    [SerializeField] AudioSource catScreech;
     
     int dead;
 
@@ -28,8 +30,13 @@ public class EnergyManager : MonoBehaviour
             timer -= Time.deltaTime;
         else if (dead <= 0) 
             dead++;
-        if (dead == 1)
-            StartCoroutine(LevelLoader.LoadLevel(1));
+
+        //Uncomment when ready to build or test
+        //if (dead == 1)
+        //{
+        //    catScreech.Play(0);
+        //    StartCoroutine(LevelLoader.LoadLevel(1));
+        //}
         EnergyFiller();
     }
 

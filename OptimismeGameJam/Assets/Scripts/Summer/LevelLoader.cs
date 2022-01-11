@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class LevelLoader : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class LevelLoader : MonoBehaviour
     [SerializeField] GameObject blackScreen;
     static Animator transition;
     [SerializeField] static float transitionTime = 1f;
+
+    [SerializeField] TMP_Text numberPetText;
+
+    public static int catsPet = 0;
 
     private void Awake()
     {
@@ -27,6 +32,12 @@ public class LevelLoader : MonoBehaviour
     private void Start()
     {
         transition = blackScreen.GetComponent<Animator>();
+        catsPet = 0;
+    }
+
+    private void Update()
+    {
+        numberPetText.text = catsPet.ToString();
     }
 
     public static IEnumerator LoadLevel(int levelIndex)
