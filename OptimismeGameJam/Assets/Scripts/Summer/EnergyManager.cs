@@ -10,8 +10,15 @@ public class EnergyManager : MonoBehaviour
     [SerializeField] float maxEnergy;
     [SerializeField] Image energyBar;
 
+    [SerializeField]GameObject levelManager;
+    LevelLoader levelLoader;
+    
+    int dead;
+
     private void Start()
     {
+        dead = 0;
+        levelLoader = levelManager.GetComponent<LevelLoader>();
         timer = maxEnergy;
     }
 
@@ -19,7 +26,10 @@ public class EnergyManager : MonoBehaviour
     {
         if (timer > 0)
             timer -= Time.deltaTime;
-        else Debug.Log("Game over");
+        else if (dead <= 0) 
+            dead++;
+        if (dead == 1)
+            levelLoader.LoadScene(1);
 
         EnergyFiller();
     }
