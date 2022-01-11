@@ -5,20 +5,31 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
 {
-    [SerializeField] Animator transition;
-    [SerializeField] float transitionTime = 1f;
+    public static LevelLoader instance;
 
-    private void Update()
+    [SerializeField] GameObject blackScreen;
+    static Animator transition;
+    [SerializeField] static float transitionTime = 1f;
+
+    private void Awake()
     {
-        Debug.Log($"Active? {gameObject.activeInHierarchy} name: {gameObject.name}");
+        if (instance == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
     }
 
-    public void LoadScene(int index)
+    private void Start()
     {
-        StartCoroutine(LoadLevel(index));
+        transition = blackScreen.GetComponent<Animator>();
     }
 
-    IEnumerator LoadLevel(int levelIndex)
+    public static IEnumerator LoadLevel(int levelIndex)
     {
         transition.SetTrigger("Start");
 

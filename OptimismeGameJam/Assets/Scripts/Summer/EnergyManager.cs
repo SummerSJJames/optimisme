@@ -29,8 +29,7 @@ public class EnergyManager : MonoBehaviour
         else if (dead <= 0) 
             dead++;
         if (dead == 1)
-            levelLoader.LoadScene(1);
-
+            StartCoroutine(LevelLoader.LoadLevel(1));
         EnergyFiller();
     }
 
