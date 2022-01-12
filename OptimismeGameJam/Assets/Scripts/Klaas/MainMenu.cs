@@ -24,7 +24,8 @@ public class MainMenu : MonoBehaviour
    
     public void StartGame()
     {
-        SceneManager.LoadScene("Tutorial");
+       // StartCoroutine(LevelLoader.LoadLevel(1));
+       SceneManager.LoadScene("Tutorial");
         FindObjectOfType<AudioManager>().Play("Click");
         Debug.Log("Game Started...");
     }

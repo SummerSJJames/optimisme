@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Klaas.unity
+    guid: c86710d7a4c49c742914d51f999e8505
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 64521e7f2008a9241b5b0e605ef5ec3e
+  - enabled: 1
     path: Assets/Scenes/Summer.unity
     guid: b77b1c391225f2442b73fcd1be298052
   - enabled: 1
