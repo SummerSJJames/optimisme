@@ -19,9 +19,11 @@ public class MainMenu : MonoBehaviour
      
         optionsMenu.SetActive(false);
     }
+
+   
     public void StartGame()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("Summer");
         FindObjectOfType<AudioManager>().Play("Click");
         Debug.Log("Game Started...");
     }
