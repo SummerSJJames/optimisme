@@ -52,10 +52,10 @@ public class CatScript : MonoBehaviour
     {
         animator.SetTrigger("Start");
 
-        LevelLoader.catsPet++;
-
         yield return new WaitForSeconds(1);
 
+        StartCoroutine(AddCatToNumber.PlayAnimation());
+        LevelLoader.catsPet++;
         Destroy(gameObject);
     }
 }
