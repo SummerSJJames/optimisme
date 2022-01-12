@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
     public GameObject mainMenu;
 
     public AudioMixer audioMixer;
+    public AudioMixer themeMixer;
 
     private void Start()
     {
@@ -23,7 +24,7 @@ public class MainMenu : MonoBehaviour
    
     public void StartGame()
     {
-        SceneManager.LoadScene("Summer");
+        SceneManager.LoadScene("Tutorial");
         FindObjectOfType<AudioManager>().Play("Click");
         Debug.Log("Game Started...");
     }
@@ -48,6 +49,12 @@ public class MainMenu : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("Click");
         Application.Quit();
         Debug.Log("Quit...");
+    }
+
+    public void SetThemeVolume(float themeVolume)
+    {
+        themeMixer.SetFloat("ThemeVolume", themeVolume);
+        FindObjectOfType<AudioManager>().Play("Click");
     }
 
     public void SetVolume(float volume)
