@@ -35,7 +35,6 @@ public class CatScript : MonoBehaviour
             direction = point - transform.position;
 
             transform.Translate(direction * movespeed * Time.deltaTime, Space.Self);
-
         }
     }
 
