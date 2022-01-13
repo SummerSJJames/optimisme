@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
 
     float timer;
 
+    [SerializeField] ParticleSystem hearts;
+
     void Start()
     {
         timer = 2;
@@ -101,6 +103,9 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == 8)
+        {
             energyManage.ResetTimer();
+            hearts.Play();
+        }
     }
 }
