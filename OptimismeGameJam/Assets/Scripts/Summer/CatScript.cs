@@ -17,7 +17,6 @@ public class CatScript : MonoBehaviour
 
     GameObject G_target;
 
-    RectTransform rect;
     Vector3 direction;
 
     private protected virtual void Start()

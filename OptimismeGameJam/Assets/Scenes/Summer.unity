@@ -595,7 +595,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1445031383549039328, guid: c26915e9d70a2354ebe7dd73751b736d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.19000006
+      value: 0.1900001
       objectReference: {fileID: 0}
     - target: {fileID: 1445031383549039328, guid: c26915e9d70a2354ebe7dd73751b736d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -613,9 +613,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1482291305118376806, guid: c26915e9d70a2354ebe7dd73751b736d, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1589037717}
     - target: {fileID: 1482291305118376808, guid: c26915e9d70a2354ebe7dd73751b736d, type: 3}
       propertyPath: m_Name
       value: Kitty
+      objectReference: {fileID: 0}
+    - target: {fileID: 7641539972342878574, guid: c26915e9d70a2354ebe7dd73751b736d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7641539972342878576, guid: c26915e9d70a2354ebe7dd73751b736d, type: 3}
       propertyPath: m_Name
@@ -631,7 +639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7641539972342878577, guid: c26915e9d70a2354ebe7dd73751b736d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.51
+      value: -2.38
       objectReference: {fileID: 0}
     - target: {fileID: 7641539972342878577, guid: c26915e9d70a2354ebe7dd73751b736d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -939,6 +947,11 @@ MonoBehaviour:
 Animator:
   m_CorrespondingSourceObject: {fileID: 7641539972342878574, guid: c26915e9d70a2354ebe7dd73751b736d, type: 3}
   m_PrefabInstance: {fileID: 7641539972121458974}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1589037717 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7641539972342878577, guid: c26915e9d70a2354ebe7dd73751b736d, type: 3}
+  m_PrefabInstance: {fileID: 1057775869}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1599642482
 GameObject:
