@@ -23,9 +23,12 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] ParticleSystem hearts;
 
+    public float startJumpHeight;
+
     void Start()
     {
         timer = 2;
+        startJumpHeight = jumpHeight;
         shouldPhase = false;
         energyManage = gameManager.GetComponent<EnergyManager>();
         rb = GetComponent<Rigidbody2D>();
