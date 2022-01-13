@@ -55,13 +55,13 @@ public class MainMenu : MonoBehaviour
     public void SetThemeVolume(float themeVolume)
     {
         themeMixer.SetFloat("ThemeVolume", themeVolume);
-        FindObjectOfType<AudioManager>().Play("Click");
+       // FindObjectOfType<AudioManager>().Play("Click");
     }
 
     public void SetVolume(float volume)
     {
         audioMixer.SetFloat("Volume", volume);
-        FindObjectOfType<AudioManager>().Play("Click");
+       // FindObjectOfType<AudioManager>().Play("Click");
         Debug.Log("Volume Changed...");
     }
 
