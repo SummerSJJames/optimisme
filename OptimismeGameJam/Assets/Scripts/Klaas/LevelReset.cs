@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class LevelReset : MonoBehaviour
 {
-    Scene scene;
+    int scene;
      void Awake()
     {
-         scene = SceneManager.GetActiveScene();
+     
     }
     
     public void OnTriggerEnter2D(Collider2D collision)
     {
-       
-        //SceneManager.Load
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
