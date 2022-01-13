@@ -444,7 +444,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &964700052
 Canvas:
   m_ObjectHideFlags: 0
@@ -455,7 +455,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 349476360}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -809,6 +809,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1423581001 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7641539972342878574, guid: c26915e9d70a2354ebe7dd73751b736d, type: 3}
+  m_PrefabInstance: {fileID: 7641539972121458974}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1599642482
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,6 +925,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1789992156 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1482291305118376808, guid: c26915e9d70a2354ebe7dd73751b736d, type: 3}
+  m_PrefabInstance: {fileID: 7641539972121458974}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1789992161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789992156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10bc7fbaa96caee43823f23c9b4c6c4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1423581001}
+  movespeed: 5
+  col: {fileID: 0}
 --- !u!1 &1808457319
 GameObject:
   m_ObjectHideFlags: 0
@@ -1154,6 +1179,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 964700053}
     m_Modifications:
+    - target: {fileID: 1374132603507751022, guid: 39adae95552722c47be88ac97792ba2b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1374132604427193672, guid: 39adae95552722c47be88ac97792ba2b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1224,7 +1253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1374132604427193672, guid: 39adae95552722c47be88ac97792ba2b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -33.553
+      value: -33.55301
       objectReference: {fileID: 0}
     - target: {fileID: 1374132604427193672, guid: 39adae95552722c47be88ac97792ba2b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1241,6 +1270,10 @@ PrefabInstance:
     - target: {fileID: 1374132604427193673, guid: 39adae95552722c47be88ac97792ba2b, type: 3}
       propertyPath: m_Name
       value: CatsPet
+      objectReference: {fileID: 0}
+    - target: {fileID: 1374132604427193675, guid: 39adae95552722c47be88ac97792ba2b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39adae95552722c47be88ac97792ba2b, type: 3}
@@ -1429,6 +1462,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7562772818663015970, guid: 19231a4eacb472446b969b6ced571a08, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 349476360}
+    - target: {fileID: 7562772818663015970, guid: 19231a4eacb472446b969b6ced571a08, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7562772820003597228, guid: 19231a4eacb472446b969b6ced571a08, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1454,6 +1495,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1482291305118376806, guid: c26915e9d70a2354ebe7dd73751b736d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7641539972342878576, guid: c26915e9d70a2354ebe7dd73751b736d, type: 3}
       propertyPath: m_Name
       value: CatHolder
@@ -1502,5 +1547,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1482291305118376806, guid: c26915e9d70a2354ebe7dd73751b736d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c26915e9d70a2354ebe7dd73751b736d, type: 3}

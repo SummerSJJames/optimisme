@@ -6,39 +6,42 @@ using TMPro;
 
 public class CatScript : MonoBehaviour
 {
-    [SerializeField] Animator animator;
+    [SerializeField] protected Animator animator;
     [SerializeField] float movespeed;
 
-    Collider2D col;
+    [SerializeField]protected Collider2D col;
 
-    bool moving;
+    protected bool moving;
 
     Transform target;
 
     RectTransform rect;
     Vector3 direction;
 
-    private void Start()
+    private protected virtual void Start()
     {
         moving = false;
-        col = GetComponent<BoxCollider2D>();
-        target = GameObject.Find("CatsPet").transform;
-        rect = target.GetComponent<RectTransform>();
+        col = GetComponent<BoxCollider2D>();     
     }
 
-    private void Update()
+    private protected virtual void Update()
     {
+        target = GameObject.Find("CatsPet").transform;
+        rect = target.GetComponent<RectTransform>();
+
         if (moving)
         {
-            RectTransformUtility.ScreenPointToWorldPointInRectangle(rect, Camera.main.transform.position, Camera.main, out Vector3 point);
+            //RectTransformUtility.ScreenPointToWorldPointInRectangle(rect, Camera.main.transform.position, Camera.main, out Vector3 point);
+            
+            Vector3 point = Camera.main.ScreenToWorldPoint(target.position);
             point = new Vector3(Mathf.Abs(point.x), Mathf.Abs(point.y), Mathf.Abs(point.z));
             direction = point - transform.position;
 
-            transform.Translate(direction * movespeed * Time.deltaTime, Space.Self);
+            transform.Translate(direction * movespeed * Time.deltaTime, Space.World);
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == 6)
         {
@@ -48,7 +51,7 @@ public class CatScript : MonoBehaviour
         }
     }
 
-    IEnumerator SpinToTarget()
+    private protected virtual IEnumerator SpinToTarget()
     {
         animator.SetTrigger("Start");
 
