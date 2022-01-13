@@ -30,6 +30,7 @@ public class MainMenu : MonoBehaviour
        // StartCoroutine(LevelLoader.LoadLevel(1));
        SceneManager.LoadScene("Tutorial");
         FindObjectOfType<AudioManager>().Play("Click");
+        FindObjectOfType<AudioManager>().Mute("Theme");
         Debug.Log("Game Started...");
     }
 
@@ -44,12 +45,14 @@ public class MainMenu : MonoBehaviour
     public void LevelSelectionOff()
     {
         levelSelection.SetActive(false);
+        mainMenu.SetActive(true);
         FindObjectOfType<AudioManager>().Play("Click");
     }
 
     public void LevelSelectionOn()
     {
         levelSelection.SetActive(true);
+        mainMenu.SetActive(false);
         FindObjectOfType<AudioManager>().Play("Click");
     }
 
