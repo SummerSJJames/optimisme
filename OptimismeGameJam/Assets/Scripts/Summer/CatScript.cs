@@ -9,7 +9,7 @@ public class CatScript : MonoBehaviour
     [SerializeField] protected Animator animator;
     [SerializeField] float movespeed;
 
-    [SerializeField]protected Collider2D col;
+    Collider2D col;
 
     protected bool moving;
 
