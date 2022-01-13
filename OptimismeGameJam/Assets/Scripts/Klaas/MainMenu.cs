@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject optionsMenu;
     public GameObject mainMenu;
+    public GameObject levelSelection;
 
     public AudioMixer audioMixer;
     public AudioMixer themeMixer;
@@ -17,7 +18,9 @@ public class MainMenu : MonoBehaviour
     {
         mainMenu = GameObject.Find("MainMenu");
         optionsMenu = GameObject.Find("OptionsMenu");
-     
+        levelSelection = GameObject.Find("LevelSelection");
+
+        levelSelection.SetActive(false);
         optionsMenu.SetActive(false);
     }
 
@@ -37,6 +40,19 @@ public class MainMenu : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("Click");
         Debug.Log("Options Showing...");
     }
+
+    public void LevelSelectionOff()
+    {
+        levelSelection.SetActive(false);
+        FindObjectOfType<AudioManager>().Play("Click");
+    }
+
+    public void LevelSelectionOn()
+    {
+        levelSelection.SetActive(true);
+        FindObjectOfType<AudioManager>().Play("Click");
+    }
+
     public void OptionsOff()
     {
         optionsMenu.SetActive(false);
