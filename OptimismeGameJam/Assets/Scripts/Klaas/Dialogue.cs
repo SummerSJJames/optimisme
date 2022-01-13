@@ -11,6 +11,7 @@ public class Dialogue : MonoBehaviour
     public float textSpeed;
 
     private int index;
+    static bool dialogueActive;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,7 @@ public class Dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+     
        if(Input.GetMouseButtonDown(0))
         {
             if(textComponent.text == lines[index])
@@ -39,6 +40,7 @@ public class Dialogue : MonoBehaviour
 
     void StartDialogue()
     {
+        dialogueActive = true;
         index = 0;
         StartCoroutine(TypeLine());
     }
@@ -62,6 +64,7 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
+            dialogueActive = false;
             gameObject.SetActive(false);
         }
     }
