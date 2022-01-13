@@ -135,7 +135,7 @@ public class PlayerMovement : MonoBehaviour
         finishedSound.Play();
         completedLevel = true;
         
-        yield return new WaitForSeconds(2.8f);
+        yield return new WaitForSeconds(3);
         completedLevel = false;
         LevelManager.LoadNextLevel();
     }
