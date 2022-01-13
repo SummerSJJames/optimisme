@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EnergyManager : MonoBehaviour
 {
@@ -32,11 +33,12 @@ public class EnergyManager : MonoBehaviour
             dead++;
 
         //Uncomment when ready to build or test
-        //if (dead == 1)
-        //{
-        //    catScreech.Play(0);
-        //    StartCoroutine(LevelLoader.LoadLevel(1));
-        //}
+        if (dead == 1)
+        {
+            //catScreech.Play(0);
+            //StartCoroutine(LevelLoader.LoadLevel(0));
+            LevelManager.LoadGameOver();
+        }
         EnergyFiller();
     }
 

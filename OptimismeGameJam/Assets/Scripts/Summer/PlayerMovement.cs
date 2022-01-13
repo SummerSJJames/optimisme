@@ -94,6 +94,14 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(moveDir * maxSpeed, rb.velocity.y);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 10)
+        {
+            LevelManager.LoadNextLevel();
+        }
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 7)

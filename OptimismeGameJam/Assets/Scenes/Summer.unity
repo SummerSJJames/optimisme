@@ -544,7 +544,7 @@ Canvas:
   m_GameObject: {fileID: 964700049}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 349476360}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -1723,7 +1723,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.7
+      value: 0.46
       mode: 0
       spread: 0
       speed:
@@ -6395,7 +6395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7562772818663015965, guid: 19231a4eacb472446b969b6ced571a08, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7562772818663015969, guid: 19231a4eacb472446b969b6ced571a08, type: 3}
       propertyPath: m_Pivot.x
@@ -6487,7 +6487,7 @@ PrefabInstance:
       objectReference: {fileID: 349476360}
     - target: {fileID: 7562772818663015970, guid: 19231a4eacb472446b969b6ced571a08, type: 3}
       propertyPath: m_RenderMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7562772820003597228, guid: 19231a4eacb472446b969b6ced571a08, type: 3}
       propertyPath: m_IsActive
@@ -6503,7 +6503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7562772820003597235, guid: 19231a4eacb472446b969b6ced571a08, type: 3}
       propertyPath: m_Color.a
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19231a4eacb472446b969b6ced571a08, type: 3}
