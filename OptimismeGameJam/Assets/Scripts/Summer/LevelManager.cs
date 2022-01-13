@@ -12,14 +12,17 @@ public class LevelManager : MonoBehaviour
 
     static List<Button> levelButtons;
 
+    [SerializeField] GameObject buttonHolder;
+
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
     }
 
+
     private void Update()
     {
-        
+
     }
 
     public static void LoadLastLevel()
