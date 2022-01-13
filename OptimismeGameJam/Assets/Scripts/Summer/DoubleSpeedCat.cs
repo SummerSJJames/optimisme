@@ -7,6 +7,7 @@ public class DoubleSpeedCat : CatScript
     private protected override IEnumerator SpinToTarget()
     {
         animator.SetTrigger("Start");
+        catMeow.Play();
         var playerMove = GameObject.Find("Player").GetComponent<PlayerMovement>();
         playerMove.maxSpeed += playerMove.maxSpeed;
 
@@ -16,6 +17,6 @@ public class DoubleSpeedCat : CatScript
 
         StartCoroutine(AddCatToNumber.PlayAnimation());
         LevelLoader.catsPet++;
-        Destroy(gameObject);
+        Destroy(transform.parent.gameObject);
     }
 }

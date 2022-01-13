@@ -27,7 +27,7 @@ public class EnergyManager : MonoBehaviour
 
     private void Update()
     {
-        if (!Dialogue.dialogueActive)
+        if (!Dialogue.dialogueActive && !PlayerMovement.completedLevel)
         {
             if (timer > 0)
                 timer -= Time.deltaTime;

@@ -7,6 +7,7 @@ public class DoubleJumpCat : CatScript
     private protected override IEnumerator SpinToTarget()
     {
         animator.SetTrigger("Start");
+        catMeow.Play();
         var playerMove = GameObject.Find("Player").GetComponent<PlayerMovement>();
         playerMove.jumpHeight += playerMove.jumpHeight - 2;
 
@@ -16,6 +17,6 @@ public class DoubleJumpCat : CatScript
 
         StartCoroutine(AddCatToNumber.PlayAnimation());
         LevelLoader.catsPet++;
-        Destroy(gameObject);
+        Destroy(transform.parent.gameObject);
     }
 }

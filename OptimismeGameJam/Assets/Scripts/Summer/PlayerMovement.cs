@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public float jumpHeight = 6f;
     [SerializeField] Camera mainCamera;
 
+    [SerializeField] AudioSource finishedSound;
+
     [SerializeField] GameObject gameManager;
     EnergyManager energyManage;
 
@@ -24,6 +26,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] ParticleSystem hearts;
 
     public float startJumpHeight;
+
+    public static bool completedLevel;
+
+    Vector2 stopMoving;
 
     void Start()
     {
@@ -42,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (!Dialogue.dialogueActive)
+        if (!Dialogue.dialogueActive && !completedLevel)
         {
             //Movement controls
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
@@ -88,6 +94,7 @@ public class PlayerMovement : MonoBehaviour
                 timer = 2;
             }
         }
+        else transform.position = stopMoving;
         //Camera follow
         if (mainCamera)
             mainCamera.transform.position = new Vector3(transform.position.x, cameraPos.y, cameraPos.z);
@@ -103,7 +110,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.layer == 10)
         {
-            LevelManager.LoadNextLevel();
+            stopMoving = transform.position;
+            StartCoroutine(LevelComplete());
         }
     }
 
@@ -120,5 +128,15 @@ public class PlayerMovement : MonoBehaviour
             energyManage.ResetTimer();
             hearts.Play();
         }
+    }
+
+    IEnumerator LevelComplete()
+    {      
+        finishedSound.Play();
+        completedLevel = true;
+        
+        yield return new WaitForSeconds(2.8f);
+        completedLevel = false;
+        LevelManager.LoadNextLevel();
     }
 }

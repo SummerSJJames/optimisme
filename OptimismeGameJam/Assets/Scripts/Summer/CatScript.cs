@@ -8,6 +8,7 @@ public class CatScript : MonoBehaviour
 {
     [SerializeField] protected Animator animator;
     [SerializeField] float movespeed;
+    [SerializeField] protected AudioSource catMeow;
 
     Collider2D col;
 
@@ -29,12 +30,11 @@ public class CatScript : MonoBehaviour
 
     private protected virtual void Update()
     {
-
         if (moving)
         {
             target = new Vector2(G_target.transform.position.x, G_target.transform.position.y);
             direction = target - new Vector2(transform.position.x, transform.position.y);
-            transform.Translate(direction * movespeed * Time.deltaTime, Space.World);
+            transform.Translate(direction * movespeed / 2 * Time.deltaTime, Space.World);
         }
     }
 
@@ -51,11 +51,12 @@ public class CatScript : MonoBehaviour
     private protected virtual IEnumerator SpinToTarget()
     {
         animator.SetTrigger("Start");
+        catMeow.Play();
 
         yield return new WaitForSeconds(1);
-
         StartCoroutine(AddCatToNumber.PlayAnimation());
+
         LevelLoader.catsPet++;
-        Destroy(gameObject);
+        Destroy(transform.parent.gameObject);
     }
 }
