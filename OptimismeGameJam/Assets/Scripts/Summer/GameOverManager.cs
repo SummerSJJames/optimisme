@@ -50,7 +50,7 @@ public class GameOverManager : MonoBehaviour
 
     public void ReturnMainMenu()
     {
-        SceneManager.LoadScene("Klaas");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void QuitGame()

@@ -63,14 +63,14 @@ public class PlayerMovement : MonoBehaviour
                 if (moveDir > 0 && !facingRight)
                 {
                     facingRight = true;
-                    //transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-                    GetComponent<SpriteRenderer>().flipX = true;
+                    transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                    //GetComponent<SpriteRenderer>().flipX = true;
                 }
                 if (moveDir < 0 && facingRight)
                 {
                     facingRight = false;
-                    //transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-                    GetComponent<SpriteRenderer>().flipX = false;
+                    transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                    //GetComponent<SpriteRenderer>().flipX = false;
                 }
             }
 

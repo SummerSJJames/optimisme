@@ -54,9 +54,9 @@ public class CatScript : MonoBehaviour
         catMeow.Play();
 
         yield return new WaitForSeconds(1);
+        LevelLoader.catsPet++;
         StartCoroutine(AddCatToNumber.PlayAnimation());
 
-        LevelLoader.catsPet++;
         Destroy(transform.parent.gameObject);
     }
 }
