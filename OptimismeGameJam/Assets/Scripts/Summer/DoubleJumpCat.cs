@@ -12,7 +12,7 @@ public class DoubleJumpCat : CatScript
 
         yield return new WaitForSeconds(1);
 
-        playerMove.jumpHeight -= playerMove.jumpHeight / 2;
+        playerMove.jumpHeight -= playerMove.jumpHeight / 2 + 2;
 
         StartCoroutine(AddCatToNumber.PlayAnimation());
         LevelLoader.catsPet++;
