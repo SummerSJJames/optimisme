@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EnergyManager : MonoBehaviour
 {
@@ -10,11 +11,11 @@ public class EnergyManager : MonoBehaviour
     [SerializeField] float maxEnergy;
     [SerializeField] Image energyBar;
 
-    [SerializeField]GameObject levelManager;
+    [SerializeField] GameObject levelManager;
     LevelLoader levelLoader;
 
     [SerializeField] AudioSource catScreech;
-    
+
     int dead;
 
     private void Start()
@@ -26,18 +27,22 @@ public class EnergyManager : MonoBehaviour
 
     private void Update()
     {
-        if (timer > 0)
-            timer -= Time.deltaTime;
-        else if (dead <= 0) 
-            dead++;
+        if (!Dialogue.dialogueActive)
+        {
+            if (timer > 0)
+                timer -= Time.deltaTime;
+            else if (dead <= 0)
+                dead++;
 
-        //Uncomment when ready to build or test
-        //if (dead == 1)
-        //{
-        //    catScreech.Play(0);
-        //    StartCoroutine(LevelLoader.LoadLevel(1));
-        //}
-        EnergyFiller();
+            //Uncomment when ready to build or test
+            EnergyFiller();
+        }
+        if (dead == 1)
+        {
+            //catScreech.Play(0);
+            //StartCoroutine(LevelLoader.LoadLevel(0));
+            LevelManager.LoadGameOver();
+        }
     }
 
     public void EnergyFiller()

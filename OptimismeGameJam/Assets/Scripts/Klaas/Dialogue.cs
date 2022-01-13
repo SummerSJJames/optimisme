@@ -11,7 +11,7 @@ public class Dialogue : MonoBehaviour
     public float textSpeed;
 
     private int index;
-    static bool dialogueActive;
+    public static bool dialogueActive;
 
     // Start is called before the first frame update
     void Start()

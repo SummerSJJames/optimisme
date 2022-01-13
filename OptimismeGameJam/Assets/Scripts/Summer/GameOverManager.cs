@@ -6,23 +6,25 @@ using UnityEngine.SceneManagement;
 
 public class GameOverManager : MonoBehaviour
 {
-    [SerializeField] Image fadeToBlack;
     [SerializeField] Button Quit;
     [SerializeField] Button Restart;
     [SerializeField] Button MainMenu;
-
-    [SerializeField] AudioSource catScreech;
 
     [SerializeField] float increment;
 
     public static bool gameOver;
     public bool resetting;
 
+    static int currentLevel;
+
     private void Start()
     {
         gameOver = false;
         resetting = false;
-        fadeToBlack.gameObject.SetActive(false);
+        //fadeToBlack.gameObject.SetActive(false);
+
+        //if (SceneManager.GetActiveScene().ToString() != "GamerOver")
+        //    currentLevel = SceneManager.GetActiveScene().buildIndex;
     }
 
     private void Update()
@@ -43,12 +45,12 @@ public class GameOverManager : MonoBehaviour
 
     public void RestartLevel()
     {
-        SceneManager.LoadScene("Summer");
+        LevelManager.LoadLastLevel();
     }
 
     public void ReturnMainMenu()
     {
-
+        SceneManager.LoadScene("Klaas");
     }
 
     public void QuitGame()
