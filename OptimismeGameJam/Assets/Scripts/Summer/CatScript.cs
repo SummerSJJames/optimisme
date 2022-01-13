@@ -13,30 +13,27 @@ public class CatScript : MonoBehaviour
 
     protected bool moving;
 
-    Transform target;
+    Vector2 target;
 
-    RectTransform rect;
+    GameObject G_target;
+
     Vector3 direction;
 
     private protected virtual void Start()
     {
         moving = false;
-        col = GetComponent<BoxCollider2D>();     
+        col = GetComponent<BoxCollider2D>();
+
+        G_target = GameObject.Find("CatsPet");
     }
 
     private protected virtual void Update()
     {
-        target = GameObject.Find("CatsPet").transform;
-        rect = target.GetComponent<RectTransform>();
 
         if (moving)
         {
-            //RectTransformUtility.ScreenPointToWorldPointInRectangle(rect, Camera.main.transform.position, Camera.main, out Vector3 point);
-            
-            Vector3 point = Camera.main.ScreenToWorldPoint(target.position);
-            point = new Vector3(Mathf.Abs(point.x), Mathf.Abs(point.y), Mathf.Abs(point.z));
-            direction = point - transform.position;
-
+            target = new Vector2(G_target.transform.position.x, G_target.transform.position.y);
+            direction = target - new Vector2(transform.position.x, transform.position.y);
             transform.Translate(direction * movespeed * Time.deltaTime, Space.World);
         }
     }

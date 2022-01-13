@@ -17,8 +17,14 @@ public class PlayerMovement : MonoBehaviour
     Vector3 cameraPos;
     Rigidbody2D rb;
 
+    public bool shouldPhase;
+
+    float timer;
+
     void Start()
     {
+        timer = 2;
+        shouldPhase = false;
         energyManage = gameManager.GetComponent<EnergyManager>();
         rb = GetComponent<Rigidbody2D>();
         rb.freezeRotation = true;
@@ -65,6 +71,19 @@ public class PlayerMovement : MonoBehaviour
         //Camera follow
         if (mainCamera)
             mainCamera.transform.position = new Vector3(transform.position.x, cameraPos.y, cameraPos.z);
+
+        if (shouldPhase)
+        {
+            Physics2D.IgnoreLayerCollision(6, 9, true);
+           
+            timer -= Time.deltaTime;
+        }
+        if (timer <= 0)
+        {
+            shouldPhase = false;
+            Physics2D.IgnoreLayerCollision(6, 9, false);
+            timer = 2;
+        }
     }
 
     void FixedUpdate()
