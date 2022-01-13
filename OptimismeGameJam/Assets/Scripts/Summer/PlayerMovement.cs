@@ -39,53 +39,55 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        //Movement controls
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
-            moveDir = Input.GetKey(KeyCode.A) ? -1 : 1;
-
-        else if (isGrounded || rb.velocity.magnitude < 0.01f || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
-            moveDir = 0;
-
-        //Change look direction
-        if (moveDir != 0)
+        if (!Dialogue.dialogueActive)
         {
-            if (moveDir > 0 && !facingRight)
+            //Movement controls
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+                moveDir = Input.GetKey(KeyCode.A) ? -1 : 1;
+
+            else if (isGrounded || rb.velocity.magnitude < 0.01f || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
+                moveDir = 0;
+
+            //Change look direction
+            if (moveDir != 0)
             {
-                facingRight = true;
-                //transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-                GetComponent<SpriteRenderer>().flipX = true;
+                if (moveDir > 0 && !facingRight)
+                {
+                    facingRight = true;
+                    //transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                    GetComponent<SpriteRenderer>().flipX = true;
+                }
+                if (moveDir < 0 && facingRight)
+                {
+                    facingRight = false;
+                    //transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                    GetComponent<SpriteRenderer>().flipX = false;
+                }
             }
-            if (moveDir < 0 && facingRight)
+
+            //Jumping
+            if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
             {
-                facingRight = false;
-                //transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-                GetComponent<SpriteRenderer>().flipX = false;
+                rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
+                isGrounded = false;
+            }
+           
+            if (shouldPhase)
+            {
+                Physics2D.IgnoreLayerCollision(6, 9, true);
+
+                timer -= Time.deltaTime;
+            }
+            if (timer <= 0)
+            {
+                shouldPhase = false;
+                Physics2D.IgnoreLayerCollision(6, 9, false);
+                timer = 2;
             }
         }
-
-        //Jumping
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
-            isGrounded = false;
-        }
-
         //Camera follow
         if (mainCamera)
             mainCamera.transform.position = new Vector3(transform.position.x, cameraPos.y, cameraPos.z);
-
-        if (shouldPhase)
-        {
-            Physics2D.IgnoreLayerCollision(6, 9, true);
-           
-            timer -= Time.deltaTime;
-        }
-        if (timer <= 0)
-        {
-            shouldPhase = false;
-            Physics2D.IgnoreLayerCollision(6, 9, false);
-            timer = 2;
-        }
     }
 
     void FixedUpdate()
