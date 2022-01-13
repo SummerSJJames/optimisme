@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/GameOver.unity
     guid: d077ec6536ea10640ac9ae493c53f54d
   - enabled: 1
-    path: Assets/Scenes/Klaas.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: c86710d7a4c49c742914d51f999e8505
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity

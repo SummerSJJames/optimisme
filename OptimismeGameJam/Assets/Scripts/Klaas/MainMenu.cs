@@ -44,12 +44,14 @@ public class MainMenu : MonoBehaviour
     public void LevelSelectionOff()
     {
         levelSelection.SetActive(false);
+        mainMenu.SetActive(true);
         FindObjectOfType<AudioManager>().Play("Click");
     }
 
     public void LevelSelectionOn()
     {
         levelSelection.SetActive(true);
+        mainMenu.SetActive(false);
         FindObjectOfType<AudioManager>().Play("Click");
     }
 
