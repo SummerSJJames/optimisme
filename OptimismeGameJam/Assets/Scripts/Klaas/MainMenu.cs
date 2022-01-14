@@ -31,6 +31,7 @@ public class MainMenu : MonoBehaviour
        SceneManager.LoadScene("Tutorial");
         FindObjectOfType<AudioManager>().Play("Click");
         FindObjectOfType<AudioManager>().Mute("Theme");
+        FindObjectOfType<AudioManager>().Play("InGame");
         Debug.Log("Game Started...");
     }
 
