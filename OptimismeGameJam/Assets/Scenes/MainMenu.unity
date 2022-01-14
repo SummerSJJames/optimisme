@@ -3802,6 +3802,7 @@ GameObject:
   - component: {fileID: 1209923426}
   - component: {fileID: 1209923425}
   - component: {fileID: 1209923428}
+  - component: {fileID: 1209923429}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -3875,6 +3876,18 @@ MonoBehaviour:
   levelSelection: {fileID: 0}
   audioMixer: {fileID: 24100000, guid: 6d376fbc75d7944458e425c47d9e315b, type: 2}
   themeMixer: {fileID: 24100000, guid: 80328b715a4fe984682786799af98072, type: 2}
+--- !u!114 &1209923429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209923423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ead7df5dc9775d24c8cde8f99494e328, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1242423071
 GameObject:
   m_ObjectHideFlags: 0
@@ -6115,6 +6128,15 @@ MonoBehaviour:
     mute: 0
     loop: 1
     source: {fileID: 0}
+  - name: InGame
+    clip: {fileID: 8300000, guid: ac143bf41d4ba284b9e1c7b7918a0ed4, type: 3}
+    mixer: {fileID: 24300002, guid: 80328b715a4fe984682786799af98072, type: 2}
+    volume: 0.8
+    mute: 0
+    loop: 1
+    source: {fileID: 0}
+  scene: 
+  themeIsPlaying: 0
 --- !u!4 &1859797983
 Transform:
   m_ObjectHideFlags: 0

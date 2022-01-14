@@ -1,11 +1,15 @@
 ﻿using UnityEngine.Audio;
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
  
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
+    public string scene;
+
+    public bool themeIsPlaying;
 
     public static AudioManager instance;
     // Start is called before the first frame update
@@ -36,8 +40,11 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        Play("Theme");
+      // if(SceneManager.GetActiveScene().name == "MainMenu"){ Play("Theme"); }
+
     }
+    
+   
     public void Play(string name)
     {
        Sound s = Array.Find(sounds, sound => sound.name == name);
@@ -55,5 +62,6 @@ public class AudioManager : MonoBehaviour
             return;
 
         s.source.Pause();
+        s.source.Stop();
     }
 }
