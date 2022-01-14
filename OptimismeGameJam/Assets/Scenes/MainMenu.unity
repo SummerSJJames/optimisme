@@ -6137,9 +6137,9 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   - name: InGame
-    clip: {fileID: 8300000, guid: ac143bf41d4ba284b9e1c7b7918a0ed4, type: 3}
+    clip: {fileID: 8300000, guid: bfa993ffeb0bcce4ca607a4951587bf8, type: 3}
     mixer: {fileID: 24300002, guid: 80328b715a4fe984682786799af98072, type: 2}
-    volume: 0.8
+    volume: 0.5
     mute: 0
     loop: 1
     source: {fileID: 0}

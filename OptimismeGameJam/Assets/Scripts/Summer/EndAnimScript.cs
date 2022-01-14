@@ -13,7 +13,7 @@ public class EndAnimScript : MonoBehaviour
     IEnumerator PlayingAnim()
     {
 
-        yield return new WaitForSeconds(10.8f);
+        yield return new WaitForSeconds(11f);
         SceneManager.LoadScene("MainMenu");
     }
 }
