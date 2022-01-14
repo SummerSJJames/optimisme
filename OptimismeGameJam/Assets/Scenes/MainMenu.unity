@@ -1174,7 +1174,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &294586367
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1619,7 +1619,7 @@ GameObject:
   - component: {fileID: 381487056}
   - component: {fileID: 381487055}
   m_Layer: 5
-  m_Name: levelThree Button
+  m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1685,11 +1685,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 381487056}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 434250555}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: LoadLevel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &381487056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1772,7 +1784,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec702deacf4988b4fbe0a707aa5363ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonHolder: {fileID: 1377294199}
+  levelButtons:
+  - {fileID: 781862501}
+  - {fileID: 1614426621}
+  - {fileID: 381487055}
+  - {fileID: 1067265145}
+  - {fileID: 1361124678}
 --- !u!1 &469200663
 GameObject:
   m_ObjectHideFlags: 0
@@ -2232,7 +2249,7 @@ GameObject:
   - component: {fileID: 781862502}
   - component: {fileID: 781862501}
   m_Layer: 5
-  m_Name: levelOne Button
+  m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2298,11 +2315,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 781862502}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 434250555}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: LoadLevel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &781862502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3029,7 +3058,7 @@ GameObject:
   - component: {fileID: 1067265146}
   - component: {fileID: 1067265145}
   m_Layer: 5
-  m_Name: levelFour Button
+  m_Name: 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3095,11 +3124,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1067265146}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 434250555}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: LoadLevel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1067265146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3906,7 +3947,7 @@ GameObject:
   - component: {fileID: 1361124679}
   - component: {fileID: 1361124678}
   m_Layer: 5
-  m_Name: levelFive Button
+  m_Name: 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3972,11 +4013,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1361124679}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 434250555}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: LoadLevel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1361124679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4592,7 +4645,7 @@ GameObject:
   - component: {fileID: 1614426622}
   - component: {fileID: 1614426621}
   m_Layer: 5
-  m_Name: levelTwo Button
+  m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4658,11 +4711,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1614426622}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 434250555}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: LoadLevel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1614426622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4777,6 +4842,107 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1631241458}
   m_CullTransparentMesh: 1
+--- !u!1001 &1698748334
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8517564186736577888, guid: 63462f00c751d0843a79c333336c4da1, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517564186736577888, guid: 63462f00c751d0843a79c333336c4da1, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517564186736577888, guid: 63462f00c751d0843a79c333336c4da1, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517564186736577888, guid: 63462f00c751d0843a79c333336c4da1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517564186736577888, guid: 63462f00c751d0843a79c333336c4da1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517564186736577888, guid: 63462f00c751d0843a79c333336c4da1, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517564186736577888, guid: 63462f00c751d0843a79c333336c4da1, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517564186736577888, guid: 63462f00c751d0843a79c333336c4da1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517564186736577888, guid: 63462f00c751d0843a79c333336c4da1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517564186736577888, guid: 63462f00c751d0843a79c333336c4da1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517564186736577888, guid: 63462f00c751d0843a79c333336c4da1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517564186736577888, guid: 63462f00c751d0843a79c333336c4da1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517564186736577888, guid: 63462f00c751d0843a79c333336c4da1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517564186736577888, guid: 63462f00c751d0843a79c333336c4da1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517564186736577888, guid: 63462f00c751d0843a79c333336c4da1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517564186736577888, guid: 63462f00c751d0843a79c333336c4da1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517564186736577888, guid: 63462f00c751d0843a79c333336c4da1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517564186736577888, guid: 63462f00c751d0843a79c333336c4da1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517564186736577888, guid: 63462f00c751d0843a79c333336c4da1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517564186736577888, guid: 63462f00c751d0843a79c333336c4da1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517564186736577888, guid: 63462f00c751d0843a79c333336c4da1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517564186736577900, guid: 63462f00c751d0843a79c333336c4da1, type: 3}
+      propertyPath: m_Name
+      value: MainMenuAnimation
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517564186736577903, guid: 63462f00c751d0843a79c333336c4da1, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 336731284}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 63462f00c751d0843a79c333336c4da1, type: 3}
 --- !u!1 &1731782209
 GameObject:
   m_ObjectHideFlags: 0
@@ -5315,7 +5481,7 @@ MonoBehaviour:
   - name: Theme
     clip: {fileID: 8300000, guid: ac143bf41d4ba284b9e1c7b7918a0ed4, type: 3}
     mixer: {fileID: 24300002, guid: 80328b715a4fe984682786799af98072, type: 2}
-    volume: 1
+    volume: 0.8
     mute: 0
     loop: 1
     source: {fileID: 0}

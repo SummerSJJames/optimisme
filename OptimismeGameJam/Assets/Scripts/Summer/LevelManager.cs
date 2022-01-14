@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class LevelManager : MonoBehaviour
 {
@@ -10,36 +11,49 @@ public class LevelManager : MonoBehaviour
 
     public static int lastLevel;
 
-    static List<Button> levelButtons;
-
-    [SerializeField] GameObject buttonHolder;
+    public List<Button> levelButtons;
 
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
+        //PlayerPrefs.DeleteAll();
     }
 
-
-    private void Update()
+    private void Start()
     {
+        //currentLevel = SceneManager.GetActiveScene().buildIndex;
 
+        int levelAt = PlayerPrefs.GetInt("levelAt", 2);
+
+        for (int i = 0; i < levelButtons.Count; i++)
+        {
+            if (i + 2 > levelAt)
+            {
+                levelButtons[i].interactable = false;
+            }
+        }
     }
 
     public static void LoadLastLevel()
     {
         SceneManager.LoadScene(lastLevel);
     }
-    public static void LoadLevel(int currentL)
+    public void LoadLevel(int currentL)
     {
         currentLevel = currentL;
-        //levelButtons[currentLevel - 2].gameObject.SetActive(true);
-        levelButtons[currentLevel - 2].GetComponent<Button>().interactable = true;
+
         SceneManager.LoadScene(currentLevel);
     }
     public static void LoadNextLevel()
     {
         currentLevel++;
         //levelButtons[currentLevel - 2].gameObject.SetActive(true);
+
+        if (currentLevel > PlayerPrefs.GetInt("levelAt"))
+        {
+            PlayerPrefs.SetInt("levelAt", currentLevel);
+        }
+
         SceneManager.LoadScene(currentLevel);
     }
     public static void LoadGameOver()

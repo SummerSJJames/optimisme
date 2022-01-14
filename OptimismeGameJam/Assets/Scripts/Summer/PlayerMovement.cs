@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     Vector3 cameraPos;
     Rigidbody2D rb;
 
+    bool isTrigger;
+
     public bool shouldPhase;
 
     float timer;
@@ -33,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        isTrigger = false;
         timer = 2;
         startJumpHeight = jumpHeight;
         shouldPhase = false;
@@ -108,8 +111,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 10)
+        if (collision.gameObject.layer == 10 && !isTrigger)
         {
+            isTrigger = true;
             stopMoving = transform.position;
             StartCoroutine(LevelComplete());
         }
@@ -134,7 +138,9 @@ public class PlayerMovement : MonoBehaviour
     {      
         finishedSound.Play();
         completedLevel = true;
-        
+
+        Debug.Log("Next level");
+
         yield return new WaitForSeconds(3);
         completedLevel = false;
         LevelManager.LoadNextLevel();
