@@ -5311,6 +5311,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8517564186204323570, guid: 63462f00c751d0843a79c333336c4da1, type: 3}
+      propertyPath: m_Size.x
+      value: 5.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517564186204323570, guid: 63462f00c751d0843a79c333336c4da1, type: 3}
+      propertyPath: m_Size.y
+      value: 6.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517564186204323570, guid: 63462f00c751d0843a79c333336c4da1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 70d08402994de8647a2d7a20b1df015a, type: 3}
+    - target: {fileID: 8517564186204323570, guid: 63462f00c751d0843a79c333336c4da1, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8517564186736577888, guid: 63462f00c751d0843a79c333336c4da1, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -5889,7 +5905,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Gotta Pet Them All
+  m_text: PLANET! KAT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5898,8 +5914,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4292800000
-  m_fontColor: {r: 0, g: 0.9339623, b: 0.86944675, a: 1}
+    rgba: 4292542605
+  m_fontColor: {r: 0.553744, g: 0, b: 0.8584906, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

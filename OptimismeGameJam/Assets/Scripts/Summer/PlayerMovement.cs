@@ -100,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
         else transform.position = stopMoving;
         //Camera follow
         if (mainCamera)
-            mainCamera.transform.position = new Vector3(transform.position.x, cameraPos.y, cameraPos.z);
+            mainCamera.transform.position = new Vector3(transform.position.x, transform.position.y, cameraPos.z);
     }
 
     void FixedUpdate()
@@ -123,6 +123,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.layer == 7)
             isGrounded = true;
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 7)
+            isGrounded = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
