@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 9201108603724189192}
   m_Layer: 8
   m_Name: Kitty
-  m_TagString: Untagged
+  m_TagString: Cat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
