@@ -52,7 +52,6 @@ public class AudioManager : MonoBehaviour
             return;
      
         s.source.Play();
-
     }
 
     public void Mute(string name)

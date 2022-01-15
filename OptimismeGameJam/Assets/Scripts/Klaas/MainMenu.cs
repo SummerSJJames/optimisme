@@ -24,15 +24,30 @@ public class MainMenu : MonoBehaviour
         optionsMenu.SetActive(false);
     }
 
-   
+
     public void StartGame()
     {
-       // StartCoroutine(LevelLoader.LoadLevel(1));
-       SceneManager.LoadScene("Tutorial");
+        // StartCoroutine(LevelLoader.LoadLevel(1));
+        SceneManager.LoadScene("Tutorial");
         FindObjectOfType<AudioManager>().Play("Click");
         FindObjectOfType<AudioManager>().Mute("Theme");
         FindObjectOfType<AudioManager>().Play("InGame");
         Debug.Log("Game Started...");
+    }
+
+    public void PlayLevel()
+    {
+        FindObjectOfType<AudioManager>().Play("Click");
+        FindObjectOfType<AudioManager>().Mute("Theme");
+        FindObjectOfType<AudioManager>().Mute("EndAnim");
+        FindObjectOfType<AudioManager>().Play("InGame");
+    }
+    public void PlayCredits()
+    {
+        FindObjectOfType<AudioManager>().Play("Click");
+        FindObjectOfType<AudioManager>().Mute("Theme");
+        FindObjectOfType<AudioManager>().Mute("InGame");
+        FindObjectOfType<AudioManager>().Play("EndAnim");
     }
 
     public void OptionsOn()
@@ -75,13 +90,13 @@ public class MainMenu : MonoBehaviour
     public void SetThemeVolume(float themeVolume)
     {
         themeMixer.SetFloat("ThemeVolume", themeVolume);
-       // FindObjectOfType<AudioManager>().Play("Click");
+        // FindObjectOfType<AudioManager>().Play("Click");
     }
 
     public void SetVolume(float volume)
     {
         audioMixer.SetFloat("Volume", volume);
-       // FindObjectOfType<AudioManager>().Play("Click");
+        // FindObjectOfType<AudioManager>().Play("Click");
         Debug.Log("Volume Changed...");
     }
 

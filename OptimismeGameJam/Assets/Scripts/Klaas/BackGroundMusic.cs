@@ -11,10 +11,18 @@ public class BackGroundMusic : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "MainMenu")
         {
             FindObjectOfType<AudioManager>().Mute("InGame");
+            FindObjectOfType<AudioManager>().Mute("EndAnim");
             FindObjectOfType<AudioManager>().Play("Theme");
+        }
+        else if (SceneManager.GetActiveScene().name == "EndingAnimation")
+        {
+            FindObjectOfType<AudioManager>().Mute("InGame");
+            FindObjectOfType<AudioManager>().Mute("Theme");
+            FindObjectOfType<AudioManager>().Play("EndAnim");
         }
         else
         {
+            FindObjectOfType<AudioManager>().Mute("EndAnim");
             FindObjectOfType<AudioManager>().Mute("Theme");
             FindObjectOfType<AudioManager>().Play("InGame");
         }
