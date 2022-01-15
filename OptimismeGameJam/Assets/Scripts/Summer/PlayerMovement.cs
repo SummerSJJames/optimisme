@@ -32,9 +32,17 @@ public class PlayerMovement : MonoBehaviour
     public static bool completedLevel;
 
     Vector2 stopMoving;
+    [SerializeField] GameObject[] allCats;
+    [SerializeField] int catsCollected;
+
+    GameObject go;
 
     void Start()
     {
+        go = GameObject.Find("FindAllCatsText");
+        go.GetComponent<TMPro.TextMeshProUGUI>().color = new Color(255, 255, 255, 0);
+        catsCollected = 0;
+        allCats = GameObject.FindGameObjectsWithTag("Cat");
         isTrigger = false;
         timer = 2;
         startJumpHeight = jumpHeight;
@@ -83,7 +91,7 @@ public class PlayerMovement : MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
                 isGrounded = false;
             }
-           
+
             if (shouldPhase)
             {
                 Physics2D.IgnoreLayerCollision(6, 9, true);
@@ -104,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void FixedUpdate()
-    {       
+    {
         //Moving
         rb.velocity = new Vector2(moveDir * maxSpeed, rb.velocity.y);
     }
@@ -113,9 +121,16 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.layer == 10 && !isTrigger)
         {
-            isTrigger = true;
-            stopMoving = transform.position;
-            StartCoroutine(LevelComplete());
+            if (catsCollected >= allCats.Length)
+            {
+                isTrigger = true;
+                stopMoving = transform.position;
+                StartCoroutine(LevelComplete());
+            }
+            else
+            {
+                StartCoroutine(FindAllCats());
+            }
         }
     }
 
@@ -135,12 +150,13 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.layer == 8)
         {
             energyManage.ResetTimer();
+            catsCollected++;
             hearts.Play();
         }
     }
 
     IEnumerator LevelComplete()
-    {      
+    {
         finishedSound.Play();
         completedLevel = true;
 
@@ -149,5 +165,15 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(3);
         completedLevel = false;
         LevelManager.LoadNextLevel();
+    }
+
+    IEnumerator FindAllCats()
+    {
+        go.GetComponent<TMPro.TextMeshProUGUI>().color = new Color(255, 255, 255, 255);
+
+        Debug.Log("Find cats");
+        yield return new WaitForSeconds(2);
+
+        go.GetComponent<TMPro.TextMeshProUGUI>().color = new Color(255, 255, 255, 0);
     }
 }
