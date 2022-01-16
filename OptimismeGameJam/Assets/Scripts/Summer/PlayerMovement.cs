@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        stopMoving = transform.position;
         go = GameObject.Find("FindAllCatsText");
         go.GetComponent<TMPro.TextMeshProUGUI>().color = new Color(255, 255, 255, 0);
         catsCollected = 0;
@@ -59,8 +60,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (!Dialogue.dialogueActive && !completedLevel)
+        if (!Dialogue.dialogueActive && !completedLevel && !IngameMenu.menuIsActive)
         {
+            stopMoving = transform.position;
             //Movement controls
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
                 moveDir = Input.GetKey(KeyCode.A) ? -1 : 1;

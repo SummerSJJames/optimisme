@@ -133,6 +133,8 @@ MonoBehaviour:
   shouldPhase: 0
   hearts: {fileID: 5820961286554200365}
   startJumpHeight: 0
+  allCats: []
+  catsCollected: 0
 --- !u!61 &5820961286554200367
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -900,7 +902,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.7
+      value: 0.09
       mode: 0
       spread: 0
       speed:
