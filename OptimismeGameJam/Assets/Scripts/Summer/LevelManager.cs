@@ -59,6 +59,6 @@ public class LevelManager : MonoBehaviour
     public static void LoadGameOver()
     {
         lastLevel = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }

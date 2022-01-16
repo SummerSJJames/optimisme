@@ -8,7 +8,6 @@ public class LevelLoader : MonoBehaviour
 {
     public static LevelLoader instance;
 
-    [SerializeField] GameObject blackScreen;
     static Animator transition;
     [SerializeField] static float transitionTime = 1f;
 
@@ -31,7 +30,6 @@ public class LevelLoader : MonoBehaviour
 
     private void Start()
     {
-        transition = blackScreen.GetComponent<Animator>();
         catsPet = 0;
     }
 
