@@ -2039,6 +2039,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 413848436081951644, guid: fdd1055b363fd014587fe54889fdda42, type: 3}
+      propertyPath: m_Size.x
+      value: 141.37398
+      objectReference: {fileID: 0}
+    - target: {fileID: 413848436081951644, guid: fdd1055b363fd014587fe54889fdda42, type: 3}
+      propertyPath: m_Offset.x
+      value: 56.59591
+      objectReference: {fileID: 0}
     - target: {fileID: 413848436081951645, guid: fdd1055b363fd014587fe54889fdda42, type: 3}
       propertyPath: m_Name
       value: LevelReset
