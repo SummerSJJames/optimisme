@@ -12,28 +12,18 @@ public class BackGroundMusic : MonoBehaviour
         {
             FindObjectOfType<AudioManager>().Mute("InGame");
             FindObjectOfType<AudioManager>().Mute("EndAnim");
-            FindObjectOfType<AudioManager>().Mute("GameOver");
             FindObjectOfType<AudioManager>().Play("Theme");
         }
         else if (SceneManager.GetActiveScene().name == "EndingAnimation")
         {
             FindObjectOfType<AudioManager>().Mute("InGame");
             FindObjectOfType<AudioManager>().Mute("Theme");
-            FindObjectOfType<AudioManager>().Mute("GameOver");
             FindObjectOfType<AudioManager>().Play("EndAnim");
-        }
-        else if (SceneManager.GetActiveScene().name == "GameOver")
-        {
-            FindObjectOfType<AudioManager>().Mute("InGame");
-            FindObjectOfType<AudioManager>().Mute("Theme");
-            FindObjectOfType<AudioManager>().Mute("EndAnim");
-            FindObjectOfType<AudioManager>().Play("GameOver");
         }
         else
         {
             FindObjectOfType<AudioManager>().Mute("EndAnim");
             FindObjectOfType<AudioManager>().Mute("Theme");
-            FindObjectOfType<AudioManager>().Mute("GameOver");
             FindObjectOfType<AudioManager>().Play("InGame");
         }
     }
